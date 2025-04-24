@@ -16,6 +16,8 @@ sudo apt install ubuntu-restricted-extras -y &&
 ## Instalando pacotes e programas do repositório deb do Ubuntu ## libfuse -> jetbrainstoolbox, gdebi para pacotes .deb
 sudo apt install python3 python3-pip wine git build-essential libssl-dev flatpak  git libfuse2 gdebi -y &&
 
+##instala postgres
+sudo apt install postgresql -y &&
 
 ## Instala gnome tweak
 sudo apt install gnome-software-plugin-flatpak -y &&
