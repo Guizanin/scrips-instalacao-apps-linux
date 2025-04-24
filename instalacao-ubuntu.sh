@@ -40,17 +40,18 @@ sudo flatpak install flathub com.obsproject.Studio -y &&
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize' &&
 
 
-sudo apt install chrome-gnome-shell -y&& 
+sudo apt install chrome-gnome-shell -y && 
 
-
+##install maven
+sudo apt install maven -y &&
 ##install java 17
-sudo apt install openjdk-17-jdk -y&&
+sudo apt install openjdk-17-jdk -y &&
 
 
 ##install nvm, 14, 18 and yarn
 sudo apt install curl -y &&
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash  &&
-source ~/.bashrc   &&
+source ~/.bashrc &&
 nvm install 12.7.0 &&
 nvm install 18 &&
 nvm install 14.17.0 &&
