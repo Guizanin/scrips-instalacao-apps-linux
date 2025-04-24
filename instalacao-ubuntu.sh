@@ -32,9 +32,6 @@ sudo snap install isoimagewriter
 ## Adicionando repositório Flathub ##
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && 
 
-## Instalando Apps do Flathub ##
-sudo flatpak install flathub com.obsproject.Studio -y &&
-
 
 ##minimize dash to dock
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize' &&
@@ -51,7 +48,7 @@ sudo apt install openjdk-17-jdk -y &&
 ##install nvm, 14, 18 and yarn
 sudo apt install curl -y &&
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash  &&
-source ~/.bashrc &&
+source ~/.bashrc   &&
 nvm install 12.7.0 &&
 nvm install 18 &&
 nvm install 14.17.0 &&
@@ -65,10 +62,11 @@ sudo apt install zsh -y &&
 ## Atualização do sistema ##
 sudo apt update && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y &&
 
-#Fim do Script # 
-echo "Finalizado" &&
-
 ##Torna ZSH padrao
-chsh -s $(which zsh)
+echo "export SHELL=/bin/zsh" >> .bash_profile &&
+echo "exec /bin/zsh -l" >> .bash_profile &&
+echo "eval "$(oh-my-posh init zsh --config ~/.poshthemes/catppuccin_frappe.omp.json)"" >> .zshrc &&
+echo $SHELL
 
-
+#Fim do Script # 
+echo "Finalizado"
