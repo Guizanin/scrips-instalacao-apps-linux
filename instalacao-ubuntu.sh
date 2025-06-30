@@ -28,7 +28,8 @@ sudo snap install code --classic &&
 sudo snap install postman &&  
 sudo snap install spotify &&
 sudo snap install notion-snap-reborn &&
-sudo snap install isoimagewriter
+sudo snap install isoimagewriter &&
+sudo snap install dbeaver-ce &&
 
 
 ## Adicionando repositório Flathub ##
