@@ -28,8 +28,10 @@ Este guia explica como configurar um ambiente de desenvolvimento WordPress usand
 ## ✅ 3. Estrutura do projeto
 Dentro do WSL:
 ```bash
-mkdir -p ~/wordpress-dev/wordpress ~/wordpress-dev/mysql_data
-cd ~/wordpress-dev
+sudo usermod -aG docker $USER &&
+mkdir -p ~/wordpress-dev/wordpress ~/wordpress-dev/mysql_data &&
+cd ~/wordpress-dev &&
+nano docker-compose.yml
 ```
 
 ---
