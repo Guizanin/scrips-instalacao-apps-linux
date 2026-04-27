@@ -1,5 +1,5 @@
 #!/bin/bash
-## v3 - 26/04/2026
+## v4 - 27/04/2026
 set -e  # Faz o script parar em caso de erro
 
 # -------------------------------
@@ -31,13 +31,9 @@ sudo apt update -y && sudo apt upgrade -y
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 sudo apt install -y ubuntu-restricted-extras unzip
 
-# Instala Nala (se não estiver presente)
-if ! command -v nala &> /dev/null; then
-    sudo apt install -y nala
-fi
 
 # Instala preload
-sudo nala install -y preload
+sudo apt install -y preload
 
 # -------------------------------
 # Instalação do Homebrew
@@ -126,4 +122,5 @@ flatpak install -y flathub io.github.kolunmi.Bazaar com.mattjakeman.ExtensionMan
 sudo snap set system refresh.retain=2
 
 echo "Configurando vm.swappiness..."
-sudo sh -c 'echo "vm.swappiness
+sudo sh -c 'echo "vm.swappiness=10" > /etc/sysctl.d/99-custom-swappiness.conf'
+sudo sysctl --system
